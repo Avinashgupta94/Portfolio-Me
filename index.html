@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-content">
+        <a class="logo" href="#">AG</a>
+        <nav class="nav" id="nav">
+          <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+          <button class="nav-style-toggle" id="navStyleToggle" aria-label="Toggle navbar background" aria-pressed="false" title="Toggle navbar background">BG</button>
+          <ul class="nav-list" id="navList">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle color theme" title="Toggle light/dark">
+          🌙
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="container hero-grid">
+          <div class="hero-text">
+            <h1>Hi, I'm <span class="highlight">Avinash</span></h1>
+            <p class="tagline"><span id="typeTarget" aria-live="polite"></span><span class="caret" aria-hidden="true"></span></p>
+            <p class="subtitle">Front‑end developer focused on crafting fast, accessible, and elegant web experiences.</p>
+            <div class="hero-actions">
+              <a class="btn" href="#projects" aria-label="View my projects">View Projects</a>
+              <a class="btn btn-secondary" href="#contact" aria-label="Contact me">Contact Me</a>
+              <div class="dropdown">
+                <button id="resumeMenuBtn" class="btn btn-secondary" aria-haspopup="true" aria-expanded="false" aria-controls="resumeMenu">Download Resume ▾</button>
+                <div id="resumeMenu" class="dropdown-menu" role="menu" aria-label="Resume formats">
+                  <a role="menuitem" class="dropdown-item" href="resume.pdf" download>PDF</a>
+                  <a role="menuitem" class="dropdown-item" href="resume.docx" download>DOCX</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-media">
+            <img class="profile" src="data:image/jpeg;base64,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" alt="Avinash profile picture" width="240" height="240" />
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="container">
+          <h2>About</h2>
+          <div class="about-grid">
+            <div class="about-bio">
+              <p>
+                I'm Avinash, a front‑end developer focused on building fast, accessible,
+                and elegant web interfaces. I enjoy transforming ideas into polished,
+                production‑ready experiences with modern tooling and clear design systems.
+              </p>
+              <p>
+                Currently exploring performance optimization, design systems, and delightful micro‑interactions.
+              </p>
+            </div>
+            <div class="about-skills">
+              <h3 class="skills-title" aria-label="Skills"><span class="skills-accent">Skills</span><span class="skills-spark" aria-hidden="true">✨</span></h3>
+              <ul class="skills">
+                <li class="skill">HTML5</li>
+                <li class="skill">CSS3</li>
+                <li class="skill">JavaScript</li>
+                <li class="skill">Responsive Design</li>
+                <li class="skill">Accessibility (a11y)</li>
+                <li class="skill">Git</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section">
+        <div class="container">
+          <h2>Projects</h2>
+          <div class="grid projects-grid">
+            <article class="card project-card aos">
+              <div class="project-media">
+                <img src="https://picsum.photos/seed/proj1/640/360" alt="Project One preview" width="640" height="360" loading="lazy" />
+              </div>
+              <div class="project-body">
+                <h3>Project One</h3>
+                <p>Quick description of what this project does and why it matters.</p>
+                <ul class="tags">
+                  <li class="tag">HTML</li>
+                  <li class="tag">CSS</li>
+                  <li class="tag">JS</li>
+                </ul>
+                <div class="project-actions">
+                  <a class="btn btn-secondary" href="#" target="_blank" rel="noopener">View Live</a>
+                  <a class="link" href="#" target="_blank" rel="noopener">Source Code →</a>
+                </div>
+              </div>
+            </article>
+            <article class="card project-card aos" style="transition-delay:.05s">
+              <div class="project-media">
+                <img src="https://picsum.photos/seed/proj2/640/360" alt="Project Two preview" width="640" height="360" loading="lazy" />
+              </div>
+              <div class="project-body">
+                <h3>Project Two</h3>
+                <p>Quick description of what this project does and why it matters.</p>
+                <ul class="tags">
+                  <li class="tag">React</li>
+                  <li class="tag">API</li>
+                </ul>
+                <div class="project-actions">
+                  <a class="btn btn-secondary" href="#" target="_blank" rel="noopener">View Live</a>
+                  <a class="link" href="#" target="_blank" rel="noopener">Source Code →</a>
+                </div>
+              </div>
+            </article>
+            <article class="card project-card aos" style="transition-delay:.1s">
+              <div class="project-media">
+                <img src="https://picsum.photos/seed/proj3/640/360" alt="Project Three preview" width="640" height="360" loading="lazy" />
+              </div>
+              <div class="project-body">
+                <h3>Project Three</h3>
+                <p>Quick description of what this project does and why it matters.</p>
+                <ul class="tags">
+                  <li class="tag">Node</li>
+                  <li class="tag">Express</li>
+                </ul>
+                <div class="project-actions">
+                  <a class="btn btn-secondary" href="#" target="_blank" rel="noopener">View Live</a>
+                  <a class="link" href="#" target="_blank" rel="noopener">Source Code →</a>
+                </div>
+              </div>
+              </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="container">
+          <h2>Get In Touch</h2>
+          <p class="contact-subtitle">I’d love to hear from you! Fill out the form below.</p>
+          <div class="contact-grid">
+            <form id="contactForm" class="form" novalidate>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input id="name" name="name" type="text" class="input" placeholder="Your name" required aria-invalid="false" />
+                  <span class="error-message" id="error-name" aria-live="polite"></span>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" class="input" placeholder="you@example.com" required aria-invalid="false" />
+                  <span class="error-message" id="error-email" aria-live="polite"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input id="subject" name="subject" type="text" class="input" placeholder="What’s this about?" required aria-invalid="false" />
+                <span class="error-message" id="error-subject" aria-live="polite"></span>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" class="textarea" rows="6" placeholder="Write your message..." required aria-invalid="false"></textarea>
+                <span class="error-message" id="error-message" aria-live="polite"></span>
+              </div>
+              <button type="submit" class="btn">Send</button>
+              <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+            </form>
+            <aside class="contact-aside">
+              <h3>Contact Details</h3>
+              <address class="contact-details">
+                <a href="mailto:you@example.com" class="contact-link">you@example.com</a>
+                <a href="tel:+10000000000" class="contact-link">+1 000 000 0000</a>
+              </address>
+              <nav class="social" aria-label="Social links">
+                <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.451 20.451h-3.554v-5.569c0-1.329-.027-3.039-1.852-3.039-1.853 0-2.136 1.447-2.136 2.943v5.665H9.355V9h3.413v1.561h.049c.476-.9 1.637-1.852 3.368-1.852 3.602 0 4.267 2.37 4.267 5.453v6.289zM5.337 7.433a2.062 2.062 0 1 1 0-4.123 2.062 2.062 0 0 1 0 4.123zM7.114 20.451H3.559V9h3.555v11.451z"/></svg>
+                </a>
+                <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.486 2 12.021c0 4.425 2.865 8.18 6.839 9.504.5.094.682-.218.682-.485 0-.239-.009-.871-.014-1.711-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.467-1.11-1.467-.907-.62.069-.607.069-.607 1.003.071 1.531 1.031 1.531 1.031.892 1.53 2.341 1.088 2.91.833.091-.648.35-1.088.636-1.339-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.338 1.909-1.296 2.748-1.026 2.748-1.026.545 1.378.202 2.397.099 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.338 4.695-4.566 4.944.359.31.679.919.679 1.852 0 1.336-.012 2.414-.012 2.743 0 .268.18.582.688.483C19.138 20.198 22 16.444 22 12.02 22 6.486 17.523 2 12 2z"/></svg>
+                </a>
+                <a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.292 4.292 0 0 0 1.88-2.37 8.59 8.59 0 0 1-2.72 1.04 4.28 4.28 0 0 0-7.29 3.9A12.146 12.146 0 0 1 3.15 4.67a4.28 4.28 0 0 0 1.32 5.7 4.25 4.25 0 0 1-1.94-.54v.05a4.28 4.28 0 0 0 3.44 4.19 4.3 4.3 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.97A8.58 8.58 0 0 1 2 19.54a12.1 12.1 0 0 0 6.56 1.92c7.87 0 12.18-6.52 12.18-12.18 0-.19-.01-.38-.02-.57A8.7 8.7 0 0 0 22.46 6z"/></svg>
+                </a>
+              </nav>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <small>© <span id="year"></span> Avinash</small>
+        <nav class="social" aria-label="Social links">
+          <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.486 2 12.021c0 4.425 2.865 8.18 6.839 9.504.5.094.682-.218.682-.485 0-.239-.009-.871-.014-1.711-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.467-1.11-1.467-.907-.62.069-.607.069-.607 1.003.071 1.531 1.031 1.531 1.031.892 1.53 2.341 1.088 2.91.833.091-.648.35-1.088.636-1.339-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.338 1.909-1.296 2.748-1.026 2.748-1.026.545 1.378.202 2.397.099 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.338 4.695-4.566 4.944.359.31.679.919.679 1.852 0 1.336-.012 2.414-.012 2.743 0 .268.18.582.688.483C19.138 20.198 22 16.444 22 12.02 22 6.486 17.523 2 12 2z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.451 20.451h-3.554v-5.569c0-1.329-.027-3.039-1.852-3.039-1.853 0-2.136 1.447-2.136 2.943v5.665H9.355V9h3.413v1.561h.049c.476-.9 1.637-1.852 3.368-1.852 3.602 0 4.267 2.37 4.267 5.453v6.289zM5.337 7.433a2.062 2.062 0 1 1 0-4.123 2.062 2.062 0 0 1 0 4.123zM7.114 20.451H3.559V9h3.555v11.451z"/></svg>
+          </a>
+          <a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.292 4.292 0 0 0 1.88-2.37 8.59 8.59 0 0 1-2.72 1.04 4.28 4.28 0 0 0-7.29 3.9A12.146 12.146 0 0 1 3.15 4.67a4.28 4.28 0 0 0 1.32 5.7 4.25 4.25 0 0 1-1.94-.54v.05a4.28 4.28 0 0 0 3.44 4.19 4.3 4.3 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.97A8.58 8.58 0 0 1 2 19.54a12.1 12.1 0 0 0 6.56 1.92c7.87 0 12.18-6.52 12.18-12.18 0-.19-.01-.38-.02-.57A8.7 8.7 0 0 0 22.46 6z"/></svg>
+          </a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+  
+</html>
+
+
