@@ -207,11 +207,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (contactForm) {
-    contactForm.addEventListener('submit', (event) => {
+    contactForm.addEventListener('submit', async (event) => {
       event.preventDefault();
       const formData = new FormData(contactForm);
       const name = String(formData.get('name') || '').trim();
       const email = String(formData.get('email') || '').trim();
+      const phone = String(formData.get('phone') || '').trim();
       const subject = String(formData.get('subject') || '').trim();
       const message = String(formData.get('message') || '').trim();
 
@@ -219,6 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const fields = [
         { id: 'name', value: name, errorId: 'error-name', label: 'Name' },
         { id: 'email', value: email, errorId: 'error-email', label: 'Email' },
+        { id: 'phone', value: phone, errorId: 'error-phone', label: 'Phone' },
         { id: 'subject', value: subject, errorId: 'error-subject', label: 'Subject' },
         { id: 'message', value: message, errorId: 'error-message', label: 'Message' },
       ];
@@ -249,6 +251,13 @@ document.addEventListener('DOMContentLoaded', () => {
           if (error) error.textContent = 'Please enter a valid email address.';
           hasError = true;
         }
+        if (phone && !/^\+?[0-9\-()\s]{7,20}$/.test(phone)) {
+          const input = document.getElementById('phone');
+          const error = document.getElementById('error-phone');
+          if (input) input.setAttribute('aria-invalid', 'true');
+          if (error) error.textContent = 'Please enter a valid phone number.';
+          hasError = true;
+        }
       }
 
       if (hasError) {
@@ -256,19 +265,32 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // On success: open WhatsApp and email draft
-      const summary = `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`;
-      const waText = encodeURIComponent(`New portfolio inquiry:\n\n${summary}`);
-      const waUrl = `https://wa.me/919939854595?text=${waText}`;
-      window.open(waUrl, '_blank');
-
-      const mailtoSubject = encodeURIComponent(`Portfolio inquiry: ${subject || 'New message'}`);
-      const mailtoBody = encodeURIComponent(`${summary}\n\n— Sent from portfolio site`);
-      const mailtoUrl = `mailto:avinashgupta94@hotmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
-      window.location.href = mailtoUrl;
-
-      if (formStatus) formStatus.textContent = 'Thanks! Opening WhatsApp and email…';
-      contactForm.reset();
+      // Submit to serverless endpoint instead of opening WhatsApp or SMS
+      if (formStatus) formStatus.textContent = 'Sending…';
+      const payload = {
+        name,
+        email,
+        phone,
+        message,
+        subject,
+        timestamp: new Date().toISOString()
+      };
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json().catch(() => ({ success:false, message:'Invalid response' }));
+        if (res.ok && data.success) {
+          if (formStatus) formStatus.textContent = '✅ Message sent successfully. I’ll reply shortly.';
+          contactForm.reset();
+        } else {
+          if (formStatus) formStatus.textContent = data.message || 'Something went wrong. Please try again later.';
+        }
+      } catch (e) {
+        if (formStatus) formStatus.textContent = 'Network error. Please try again later.';
+      }
     });
   }
 });
