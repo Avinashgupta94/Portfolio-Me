@@ -256,8 +256,18 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      alert('Thank you for your message!');
-      if (formStatus) formStatus.textContent = 'Thanks! Your message has been captured locally.';
+      // On success: open WhatsApp and email draft
+      const summary = `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`;
+      const waText = encodeURIComponent(`New portfolio inquiry:\n\n${summary}`);
+      const waUrl = `https://wa.me/919939854595?text=${waText}`;
+      window.open(waUrl, '_blank');
+
+      const mailtoSubject = encodeURIComponent(`Portfolio inquiry: ${subject || 'New message'}`);
+      const mailtoBody = encodeURIComponent(`${summary}\n\n— Sent from portfolio site`);
+      const mailtoUrl = `mailto:avinashgupta94@hotmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+      window.location.href = mailtoUrl;
+
+      if (formStatus) formStatus.textContent = 'Thanks! Opening WhatsApp and email…';
       contactForm.reset();
     });
   }
