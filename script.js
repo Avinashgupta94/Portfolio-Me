@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Typing animation for hero subheading
   const typeTarget = document.getElementById('typeTarget');
-  const words = ["Web Developer", "Designer", "Creator"];
+  const words = ["Big Data | SQL | Python | Power BI | AWS Analytics | ex-Amazon Catalog Operations"];
   let wordIndex = 0;
   let charIndex = 0;
   let isDeleting = false;
