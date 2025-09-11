@@ -156,14 +156,14 @@ html.dark .contact-link:hover{color:var(--accent);text-decoration:none}
 #about h2{text-align:center;font-size:42px;font-weight:800;color:var(--accent);margin-bottom:14px}
 #about .about-bio p{font-size:18px;line-height:1.85;max-width:760px;margin:0 auto 18px;text-align:center;color:var(--muted)}
 #about .about-skills h3{text-align:center;margin-bottom:14px}
-#about .about-grid{display:grid;gap:32px;text-align:center}
+#about .about-grid{display:grid;gap:24px;text-align:center}
 #about .about-bio{grid-column:1 / -1}
-#about .about-panels{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+#about .about-combined{background:var(--panel);border:1px solid var(--border);border-radius:20px;box-shadow:0 12px 28px rgba(17,24,39,.10);padding:24px;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch}
 #about .skills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:18px;justify-items:center}
 #about .skill{background:rgba(255,153,0,.12);border:1px solid rgba(255,153,0,.32);border-radius:999px;padding:10px 14px;box-shadow:0 6px 18px rgba(17,24,39,.06);text-align:center;color:var(--text);transition:transform .18s ease, box-shadow .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease;display:inline-flex;align-items:center;gap:8px}
 #about .skill:hover{background:var(--accent);color:#fff;border-color:var(--accent);transform:translateY(-2px);box-shadow:0 12px 26px rgba(17,24,39,.16)}
 /* Skills wrapper as centered card */
-#about .about-skills,#about .about-certs{background:var(--panel);border:1px solid var(--border);border-radius:20px;padding:22px;box-shadow:0 12px 28px rgba(17,24,39,.10)}
+#about .about-skills,#about .about-certs{background:transparent;border:0;border-radius:16px;padding:10px 12px;box-shadow:none}
 #about .about-skills h3,#about .about-certs h3{text-align:center;margin-bottom:14px}
 #about .certs{list-style:disc;color:var(--muted);text-align:left;max-width:760px;margin:0 auto;padding-left:20px}
 #about .certs{list-style:disc;color:var(--muted);text-align:left;max-width:760px;margin:0 auto;padding-left:20px}
@@ -189,7 +189,7 @@ html.dark .contact-link:hover{color:var(--accent);text-decoration:none}
   .hero-actions{flex-direction:column;align-items:center}
   .hero-actions .btn, .hero-actions .btn-secondary, .hero-actions .dropdown > .btn-secondary{min-width:0;width:100%;max-width:360px}
   .about-grid{grid-template-columns:1fr}
-  #about .about-panels{grid-template-columns:1fr}
+  #about .about-combined{grid-template-columns:1fr}
   .contact-grid{grid-template-columns:1fr}
   #about .skills{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
