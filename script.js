@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const applyTheme = (mode) => {
     const isDark = mode === 'dark';
     docEl.classList.toggle('dark', isDark);
-    if (themeToggle) themeToggle.textContent = isDark ? '☀️' : '🌙';
+    if (themeToggle) themeToggle.textContent = isDark ? '🌙' : '☀️';
   };
   // Initialize from storage or system preference
   const initTheme = () => {
