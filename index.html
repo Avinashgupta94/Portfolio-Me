@@ -25,9 +25,10 @@
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle color theme" title="Toggle light/dark">
-          🌙
-        </button>
+        <div class="theme-switch" title="Toggle light/dark">
+          <input type="checkbox" id="themeSwitch" aria-label="Toggle color theme" />
+          <label for="themeSwitch" class="switch" aria-hidden="true"></label>
+        </div>
       </div>
     </header>
 
@@ -62,7 +63,7 @@
                 After a focused upskilling sabbatical, I’m ready to bring a mix of hands-on engineering, cloud expertise, and AI-driven problem solving into roles where data reliability and scalability make the difference.
               </p>
             </div>
-            <div class="about-skills">
+            <div class="about-skills mx-auto text-center">
               <h3 class="skills-title" aria-label="Skills">
                 <span class="skills-icon" aria-hidden="true">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M2 13h20"/></svg>

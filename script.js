@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const siteHeader = document.querySelector('.site-header');
   const navStyleToggle = document.getElementById('navStyleToggle');
   const themeToggle = document.getElementById('themeToggle');
+  const themeSwitch = document.getElementById('themeSwitch');
   const navLinks = Array.from(document.querySelectorAll('.nav-list a'));
   const year = document.getElementById('year');
   const contactForm = document.getElementById('contactForm');
@@ -92,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const applyTheme = (mode) => {
     const isDark = mode === 'dark';
     docEl.classList.toggle('dark', isDark);
-    if (themeToggle) themeToggle.textContent = isDark ? '🌙' : '☀️';
+    if (themeSwitch) themeSwitch.checked = isDark;
   };
   // Initialize from storage or system preference
   const initTheme = () => {
@@ -105,10 +106,10 @@ document.addEventListener('DOMContentLoaded', () => {
     applyTheme(prefersDark ? 'dark' : 'light');
   };
   initTheme();
-  if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      const isDark = document.documentElement.classList.contains('dark');
-      const next = isDark ? 'light' : 'dark';
+  if (themeSwitch) {
+    themeSwitch.addEventListener('change', () => {
+      const isDark = themeSwitch.checked;
+      const next = isDark ? 'dark' : 'light';
       applyTheme(next);
       setStoredTheme(next);
     });
