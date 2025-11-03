@@ -65,10 +65,10 @@ button,.btn{transition:transform .15s ease, box-shadow .2s ease}
 
 
 .hero {
-  min-height: 100vh;
+  min-height: calc(100vh - 64px);
   display: flex;
   align-items: center;
-  background: radial-gradient(circle at center top, #1a2942 0%, #090e16 100%);
+  background: radial-gradient(circle at top, rgba(31, 41, 55, 0.5) 0%, rgba(9, 14, 22, 0.95) 100%);
   position: relative;
   overflow: hidden;
 }
@@ -89,7 +89,14 @@ button,.btn{transition:transform .15s ease, box-shadow .2s ease}
 .btn:hover{background:#fff;color:var(--accent);border-color:var(--accent);transform:translateY(-1px) scale(1.02);box-shadow:0 10px 18px rgba(255,153,0,.18)}
 
 /* Hero layout */
-.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:36px;align-items:center;justify-content:center}
+.hero-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 .hero-actions{display:flex;gap:12px;justify-content:center}
 .hero-actions .btn, .hero-actions .btn-secondary{padding:12px 18px; min-width:220px; height:44px; text-align:center; border-radius:12px; font-weight:600}
 .hero-actions .dropdown{display:inline-block}
@@ -139,21 +146,21 @@ button,.btn{transition:transform .15s ease, box-shadow .2s ease}
 .project-actions{display:flex;gap:12px;align-items:center;margin-top:4px}
 .project-actions-sql{flex-wrap:wrap}
 .project-actions-sql .btn-secondary{min-width:0}
-.btn-secondary{
-  background:transparent;
-  border:2px solid var(--accent);
-  color:var(--text);
-  padding:8px 12px;
-  border-radius:12px;
-  text-decoration:none;
-  font-weight:600;
-  transition:transform .18s ease, background-color .2s ease, color .2s ease, border-color .2s ease
+.btn-secondary {
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  padding: 8px 12px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
-.btn-secondary:hover{
-  background:var(--accent);
-  color:#000;
-  border-color:var(--accent);
-  transform:translateY(-1px) scale(1.02)
+.btn-secondary:hover {
+  background: var(--accent);
+  color: var(--bg);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 153, 0, 0.4);
 }
 .dropdown{position:relative;display:inline-block;min-width:160px}
 .dropdown-menu{position:absolute;right:0;top:48px;display:none;min-width:220px;background:#121826;border:1px solid var(--border);border-radius:12px;box-shadow:0 10px 22px rgba(0,0,0,.38);padding:6px}
