@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const navToggleButton = document.getElementById('navToggle');
   const navList = document.getElementById('navList');
   const siteHeader = document.querySelector('.site-header');
-  const navStyleToggle = document.getElementById('navStyleToggle');
   const navLinks = Array.from(document.querySelectorAll('.nav-list a'));
   const year = document.getElementById('year');
   const contactForm = document.getElementById('contactForm');
@@ -30,14 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
   updateHeaderSolid();
   window.addEventListener('scroll', updateHeaderSolid, { passive: true });
 
-  // Manual toggle
-  if (navStyleToggle) {
-    navStyleToggle.addEventListener('click', () => {
-      const pressed = navStyleToggle.getAttribute('aria-pressed') === 'true';
-      navStyleToggle.setAttribute('aria-pressed', String(!pressed));
-      updateHeaderSolid();
-    });
-  }
+  // Theme toggle removed for permanent dark mode
 
   // Resume dropdown interactions
   if (resumeMenuBtn && resumeMenu) {
