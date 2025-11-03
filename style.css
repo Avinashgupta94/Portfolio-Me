@@ -7,15 +7,7 @@
   --border:#e6e8ee;
 }
 
-/* Dark theme tokens */
-html.dark{
-  --bg:#0b0f17;
-  --panel:#121826;
-  --text:#e4e8f2;
-  --muted:#a4b0c3;
-  --accent:#ff9900; /* AWS orange */
-  --border:#1f2a44;
-}
+/* Dark theme tokens removed — site uses fixed light mode in :root */
 
 *{box-sizing:border-box}
 html,body{height:100%}
@@ -67,20 +59,7 @@ button,.btn{transition:transform .15s ease, box-shadow .2s ease}
 .nav-list a.active::after{width:100%}
 
 /* Theme toggle button */
-.theme-toggle{background:transparent;border:1px solid var(--border);color:var(--text);padding:6px 10px;border-radius:12px;font-weight:600;cursor:pointer;transition:transform .18s ease, background-color .2s ease, color .2s ease, border-color .2s ease}
-.theme-toggle:hover{background:var(--accent);color:#fff;border-color:var(--accent);transform:translateY(-1px) scale(1.02)}
-.theme-toggle:focus{outline:none;box-shadow:0 0 0 4px rgba(79,140,255,.18)}
-.theme-toggle .icon{display:inline-block;transition:transform .25s ease, opacity .25s ease}
-.theme-toggle .icon.enter{opacity:1;transform:scale(1)}
-.theme-toggle .icon.exit{opacity:0;transform:scale(.8)}
 
-/* Theme switch (Material-style) */
-.theme-switch{display:flex;align-items:center;justify-content:center;margin-left:12px}
-.theme-switch input{position:absolute;opacity:0;width:0;height:0}
-.switch{position:relative;width:48px;height:28px;background:var(--border);border-radius:999px;border:1px solid var(--border);cursor:pointer;transition:background-color .3s ease, border-color .3s ease, box-shadow .3s ease}
-.switch::after{content:"";position:absolute;top:50%;left:4px;transform:translateY(-50%);width:22px;height:22px;background:var(--panel);border:1px solid var(--border);border-radius:50%;box-shadow:0 1px 2px rgba(0,0,0,.18);transition:left .3s ease, background-color .3s ease, border-color .3s ease}
-.theme-switch input:checked + .switch{background:rgba(255,153,0,.45);border-color:var(--accent);box-shadow:0 0 0 4px rgba(255,153,0,.18)}
-.theme-switch input:checked + .switch::after{left:22px;background:var(--accent);border-color:var(--accent)}
 
 .hero{min-height:100vh;display:flex;align-items:center;background:linear-gradient(135deg, #2563eb 0%, #06b6d4 100%)}
 .hero .container{display:flex;align-items:center;justify-content:center}
@@ -156,13 +135,7 @@ label{color:var(--muted);font-size:14px}
 .form .btn{margin-top:4px}
 
 /* Improve dark mode visibility for contact section */
-html.dark #contact{background:linear-gradient(180deg, rgba(20,26,39,.85) 0%, rgba(11,15,23,.95) 100%)}
-html.dark #contact h2{color:var(--text)}
-html.dark .contact-subtitle{color:#c9d6f3}
-html.dark .contact-aside{border-color:#2a395a;box-shadow:0 14px 34px rgba(0,0,0,.45)}
-html.dark #contact label{color:#b6c3d8}
-html.dark .contact-link{color:var(--text)}
-html.dark .contact-link:hover{color:var(--accent);text-decoration:none}
+/* dark mode overrides removed to keep fixed light mode */
 
 .about-grid{display:grid;grid-template-columns:1.4fr .6fr;gap:24px;margin-top:12px}
 .skills{display:flex;flex-wrap:wrap;gap:10px;padding:0;margin:8px 0 0;list-style:none}
@@ -234,8 +207,6 @@ html.dark .contact-link:hover{color:var(--accent);text-decoration:none}
 }
 
 /* Dark mode adjustments for About/Skills for stronger contrast */
-html.dark #about .about-skills{background:var(--panel);border-color:#2a395a;box-shadow:0 14px 34px rgba(0,0,0,.45)}
-html.dark #about .skill{background:rgba(255,153,0,.14);border-color:rgba(255,153,0,.4);box-shadow:0 6px 18px rgba(0,0,0,.35)}
-html.dark #about .skill:hover{box-shadow:0 14px 30px rgba(0,0,0,.55)}
+/* dark mode overrides removed to keep fixed light mode */
 
 

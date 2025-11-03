@@ -3,8 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const navList = document.getElementById('navList');
   const siteHeader = document.querySelector('.site-header');
   const navStyleToggle = document.getElementById('navStyleToggle');
-  const themeToggle = document.getElementById('themeToggle');
-  const themeSwitch = document.getElementById('themeSwitch');
   const navLinks = Array.from(document.querySelectorAll('.nav-list a'));
   const year = document.getElementById('year');
   const contactForm = document.getElementById('contactForm');
@@ -81,39 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Theme toggle: light/dark with persistence
-  const docEl = document.documentElement;
-  const THEME_KEY = 'prefers-theme';
-  const getStoredTheme = () => {
-    try { return localStorage.getItem(THEME_KEY); } catch { return null; }
-  };
-  const setStoredTheme = (value) => {
-    try { localStorage.setItem(THEME_KEY, value); } catch {}
-  };
-  const applyTheme = (mode) => {
-    const isDark = mode === 'dark';
-    docEl.classList.toggle('dark', isDark);
-    if (themeSwitch) themeSwitch.checked = isDark;
-  };
-  // Initialize from storage or system preference
-  const initTheme = () => {
-    const stored = getStoredTheme();
-    if (stored === 'light' || stored === 'dark') {
-      applyTheme(stored);
-      return;
-    }
-    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    applyTheme(prefersDark ? 'dark' : 'light');
-  };
-  initTheme();
-  if (themeSwitch) {
-    themeSwitch.addEventListener('change', () => {
-      const isDark = themeSwitch.checked;
-      const next = isDark ? 'dark' : 'light';
-      applyTheme(next);
-      setStoredTheme(next);
-    });
-  }
+  // Theme toggle removed — site uses fixed light mode. See CSS :root for colors.
 
   // Active link highlight on scroll
   const sections = navLinks
@@ -153,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Typing animation for hero subheading
   const typeTarget = document.getElementById('typeTarget');
-  const words = ["Big Data", "SQL", "Python", "AWS Analytics", "Power BI"];
+  const words = ["Data Engineer Associate", "AI Engineer for Developers (Associate)"]; 
   let wordIndex = 0;
   let charIndex = 0;
   let isDeleting = false;
